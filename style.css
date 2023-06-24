@@ -1,0 +1,174 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background-color: rgba(0, 0, 0, 0.963); */
+}
+.contain{
+    animation: animate2 10s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    min-width: 90vw;
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+.bubles{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 25px rgba(247, 244, 244, 0.277);
+    animation: animate 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.bubles:nth-child(2)
+{
+        position: relative;
+        zoom:0.45;
+        left: -10px;
+        top: -120px;
+        z-index: 20;
+        animation-delay: 5s;
+
+    }
+    .bubles:nth-child(3)
+{
+        position: relative;
+        zoom:0.23;
+        left:50px;
+        top: -120px;
+        z-index: 20;
+        animation-delay: 1s;
+
+    }
+    .bubles:nth-child(4)
+    {
+            position: relative;
+            zoom:0.73;
+            left:50px;
+            top: -110px;
+            z-index: 20;
+            animation-delay: 7s;
+    
+        }
+        .bubles:nth-child(5)
+        {
+                position: relative;
+                zoom:1.4;
+                left:5px;
+                top: 20px;
+                z-index: 20;
+                animation-delay: 2s;
+        
+         }
+        .bubles:nth-child(6)
+        {
+                
+                zoom:0.2;
+                z-index: 20;
+                animation-delay: 3s;
+            
+        }
+
+@keyframes animate {
+    0% {
+       transform:translateY(20px);
+    }
+    50% {
+        filter: hue-rotate(360deg);
+        transform:translateY(-20px);
+    }
+    100%{
+        
+        transform:translateY(20px);
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        background: linear-gradient(to right, rgb(5, 5, 5),rgb(90, 3, 8));
+
+    }
+    50% {
+        background: linear-gradient(to right, rgba(99, 2, 2, 0.989),rgb(17, 16, 16));
+    }
+    100%{
+        background: linear-gradient(to right, rgba(255, 0, 0, 0.607),rgba(0, 0, 255, 0.584));
+    }
+}
+.bubles::before
+{
+    content: '';
+    top: 50px;
+    left: 45px;
+    position: absolute;
+    width: 30px;
+    height:30px ;
+    border-radius: 50%;
+    background: white;
+    z-index: 10;
+    filter: blur(2px);
+
+}
+.bubles::after
+{
+    content: '';
+    top: 80px;
+    left: 80px;
+    position: absolute;
+    width: 20px;
+    height:20px ;
+    border-radius: 50%;
+    background: white;
+    z-index: 10;
+    filter: blur(2px);
+
+}
+.bubles span{
+    position: absolute;
+    border-radius: 50%;
+}
+.bubles span:nth-child(1){
+    inset: 10px;
+    border-left: 15px solid blue;
+    filter: blur(8px);
+}
+.bubles span:nth-child(2){
+    inset: 10px;
+    border-right: 15px solid rgb(255, 0, 64);
+    filter: blur(8px);
+}
+.bubles span:nth-child(3){
+    inset: 30px;
+    border-bottom: 15px solid rgb(0, 255, 55);
+    filter: blur(8px);
+}
+
+.bubles span:nth-child(4){
+    inset: 30px;
+    border-top: 15px solid rgb(235, 235, 225);
+    filter: blur(8px);
+}
+
+.bubles span:nth-child(5){
+    inset: 40px;
+    border-right: 15px solid rgba(252, 252, 7, 0.721);
+    filter: blur(12px);
+
+}
+.bubles span:nth-child(6){
+    inset: 10px;
+    border-bottom: 15px solid rgb(235, 235, 225);
+    filter: blur(8px);
+    transform: rotate(360deg);
+}
