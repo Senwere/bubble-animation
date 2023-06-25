@@ -6,28 +6,39 @@
 body{
    
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
     /* background-color: rgba(0, 0, 0, 0.963); */
 }
-.contain{
-    animation: animate2 10s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    min-width: 90vw;
+.bubles1{
     display: flex;
-    height: 90vh;
+    height: 70vh;
+    width: 100vw;
+    margin-bottom:0px;
+    background-color: blue;
     justify-content: center;
     align-items: center;
 }
+.fly1{
+    display: flex;
+    /* position:absolute; */
+    justify-content: space-between;
+    background-color: rgb(32, 9, 239);
+    overflow: visible;
+    width: 100vw;
+    height: 32vh;
+    align-items: last baseline;
+
+}
+/*  */
 .bubles{
     position: absolute;
     width: 200px;
     height: 200px;
     border-radius: 50%;
     box-shadow: inset 0 0 25px rgba(247, 244, 244, 0.277);
-    animation: animate 4s;
+    animation: animate 5s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
 }
@@ -106,6 +117,8 @@ body{
         background: linear-gradient(to right, rgba(255, 0, 0, 0.607),rgba(0, 0, 255, 0.584));
     }
 }
+
+
 .bubles::before
 {
     content: '';
@@ -171,4 +184,175 @@ body{
     border-bottom: 15px solid rgb(235, 235, 225);
     filter: blur(8px);
     transform: rotate(360deg);
+}
+
+
+
+
+
+
+.fly{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 25px rgba(247, 244, 244, 0.277);
+    animation: animate3 20s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.fly::before
+{
+    content: '';
+
+    position:absolute;
+    justify-content: baseline;
+    width:20px;
+    height:20px ;
+    border-radius: 50%;
+    background: rgb(220, 232, 210);
+    /* z-index: 10; */
+    filter: blur(2px);
+
+}
+.fly::after
+{
+    content: '';
+ 
+    position: relative;
+    /* display: flex; */
+    /* justify-content: baseline; */
+    width: 5px;
+    height:5px ;
+    border-radius: 50%;
+    background: rgb(241, 234, 234);
+    /* z-index: 10; */
+    filter: blur(2px);
+
+}
+.fly:nth-child(2)
+{   /*display: flex; */
+    /* background: red; */
+        position: relative;
+        /* left: -10px; */
+        /* top: -120px; */
+        z-index: 20;
+        animation-delay: 1s;
+
+    }
+    .fly:nth-child(3)
+    {
+        /* background-color: rgba(247, 151, 7, 0.767); */
+            position: relative;
+            /* zoom:0.45; */
+            /* left: -10px;
+            top: -120px; */
+            z-index: 20;
+            animation-delay: 2s;
+    
+        }
+        .fly:nth-child(4)
+        { 
+            /*display: flex;*/
+            /* background: blue; */
+                position: relative;
+                zoom:2;
+                /* left: -10px;
+                top: -120px; */
+                z-index: 20;
+                animation-delay: 3s;
+        
+            }
+            .fly:nth-child(5)
+            {
+                    position: relative;
+                    zoom:0.5;
+                    /* left: -10px;
+                    top: -120px; */
+                    z-index: 20;
+                    animation-delay: 4s;
+            
+                }
+                .fly:nth-child(6)
+            {
+                    position: relative;
+                    zoom:1.4;
+                    /* left: -10px;
+                    top: -120px; */
+                    z-index: 20;
+                    animation-delay: 6s;
+            
+                }
+                .fly:nth-child(7)
+            {
+                    position: relative;
+                    zoom:0;
+                    /* left: -10px;
+                    top: -120px; */
+                    z-index: 20;
+                    animation-delay: 8s;
+            
+                }
+                .fly:nth-child(8)
+            {
+                    position: relative;
+                    zoom:2;
+                    /* left: -10px;
+                    top: -120px; */
+                    z-index: 20;
+
+                }
+.fly span{
+    position: absolute;
+    border-radius: 50%;
+}
+.fly span:nth-child(1){
+    inset: 3px;
+    border-left: 3px solid blue;
+    filter: blur(2px);
+}
+.fly span:nth-child(2){
+    inset: 1px;
+    border-right: 3px solid rgb(255, 0, 64);
+    filter: blur(2px);
+}
+.fly span:nth-child(3){
+    inset: 3px;
+    border-bottom: 3px solid rgb(0, 255, 55);
+    filter: blur(2px);
+}
+
+.fly span:nth-child(4){
+    inset: 3px;
+    border-top: 3px solid rgb(235, 235, 225);
+    filter: blur(3px);
+}
+
+.fly span:nth-child(5){
+    inset: 4px;
+    border-right: 4px solid rgba(64, 64, 7, 0.721);
+    filter: blur(5px);
+
+}
+.fly span:nth-child(6){
+    inset: 10px;
+    border-bottom: 4px solid rgb(235, 235, 225);
+    filter: blur(3px);
+    }
+@keyframes animate3 {
+    0% {
+       transform: translateY(0vh);
+    }
+    25% {
+        transform: translateY(-50vh);
+        
+    }
+    50%{
+        transform: translateY(0vh);
+        filter: hue-rotate(-360);
+    } 
+    100%{
+        transform: translateY(-100vh);
+        
+    }
 }
